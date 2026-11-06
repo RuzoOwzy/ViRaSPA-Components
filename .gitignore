@@ -1,0 +1,13 @@
+# Editors and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.tmp
+*.swp
+*~
+
+# Leftovers of an interrupted install or stamp
+*.installing/
+*.previous/
