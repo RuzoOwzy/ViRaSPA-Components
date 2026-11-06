@@ -11,7 +11,7 @@ One or two sentences: what it is and when to use it.
 ## Install
 
 ```bash
-node node-tools/install.js add component <tag> --version x.y.z
+node node-tools/install.js add component <tag>@x.y.z
 ```
 
 ## Usage

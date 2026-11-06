@@ -15,7 +15,7 @@ The framework itself keeps only the basic shell components (`vs-header`, `vs-men
 From your project's repository root:
 
 ```bash
-node node-tools/install.js add component vs-card --version 0.1.0
+node node-tools/install.js add component vs-card@0.1.0
 ```
 
 - **Where it goes:** it lands in `components/vs-card/` and is pinned, with a checksum, in `app/project-viraspa.json`.
