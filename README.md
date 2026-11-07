@@ -21,7 +21,14 @@ The framework keeps only what it needs itself (the shell components `vs-header`,
 
 ## Helpers
 
-None yet: the first ones (`forms`, `data-entry`, `filter`, `tooltip`) are planned.
+| Helper | What it is | API | Version |
+| --- | --- | --- | --- |
+| [forms](helpers/forms/README.md) | Required marks, validation messages, read-only mode, snapshots and values. | `Viraspa.forms` | 0.1.0 |
+| [data-entry](helpers/data-entry/README.md) | Enter to the next field, Shift+Enter back, the last field adds a row or submits. Every key overridable. | `Viraspa.dataEntry` | 0.1.0 |
+| [filter](helpers/filter/README.md) | Type to filter a list, table or select (case- and accent-insensitive), with highlighting. | `Viraspa.filter` | 0.1.0 |
+| [tooltip](helpers/tooltip/README.md) | Tooltips from `data-tooltip`: hover, keyboard focus, long press. | `Viraspa.tooltip` | 0.1.0 |
+
+They need framework features from milestone N7 (the keyboard rules); the framework's sample uses all four on its `/data-entry` page.
 
 ## Using a package in a project
 

@@ -4,6 +4,8 @@ Each component and helper has its own version (in its manifest) and, once releas
 
 ## In development
 
+- **Helpers forms, data-entry, filter and tooltip 0.1.0:** first versions (see each README).
+
 - **Repository renamed** from ViRaSPA-Components to ViRaSPA-Extensions: it holds official components and, from now on, official helpers (`helpers/<name>/`, `helper-viraspa.json`).
 - **Manifests** may list `dependencies` (`[{ kind, name, version }]`), installed automatically by `install.js`.
 - **vs-card, vs-stat-tile, vs-login-form 0.1.0:** framework requirement corrected to 0.1.0 (the framework's first version; "0.2.0" was a working number).
