@@ -1,8 +1,15 @@
-# ViRaSPA Components
+# ViRaSPA Extensions
 
-Official optional components for [ViRaSPA](https://github.com/RuzoOwzy/ViRaSPA), the no-build SPA framework in plain HTML, CSS and JavaScript.
+The official, optional extensions for [ViRaSPA](https://github.com/RuzoOwzy/ViRaSPA), the no-build SPA framework in plain HTML, CSS and JavaScript. There are two kinds:
 
-The framework itself keeps only the basic shell components (`vs-header`, `vs-menu`, `vs-icon`…). Everything else lives here, so a project downloads only the components it uses, one at a time.
+- **Components:** custom elements such as `vs-card` or `vs-table`, loaded the first time their tag appears on a page.
+- **Helpers:** behaviour and APIs without an element of their own, such as `Viraspa.forms`, loaded at startup or by a component that needs them.
+
+The framework keeps only what it needs itself (the shell components `vs-header`, `vs-menu`, `vs-icon`…, signals, bindings, formats, i18n). Everything here is optional. A project installs only what it uses, one package at a time.
+
+> **Status:** in development, alongside the framework's first version (0.1.0). Nothing is released or tagged yet.
+
+## Components
 
 | Component | What it is | Isolation | Version |
 | --- | --- | --- | --- |
@@ -10,7 +17,11 @@ The framework itself keeps only the basic shell components (`vs-header`, `vs-men
 | [vs-stat-tile](components/vs-stat-tile/README.md) | A key figure for dashboards, with a trend. | full | 0.1.0 |
 | [vs-login-form](components/vs-login-form/README.md) | A configurable sign-in form that works with password managers. | scoped | 0.1.0 |
 
-## Using a component in a project
+## Helpers
+
+None yet: the first ones (`forms`, `data-entry`, `filter`, `tooltip`) are planned.
+
+## Using a package in a project
 
 From your project's repository root:
 
@@ -18,32 +29,48 @@ From your project's repository root:
 node node-tools/install.js add component vs-card@0.1.0
 ```
 
-- **Where it goes:** it lands in `components/vs-card/` and is pinned, with a checksum, in `app/project-viraspa.json`.
-- **Loading:** nothing else is needed. The framework loads a `vs-*` component the first time its tag appears on a page.
-- **Version check:** each component's `component-viraspa.json` declares which framework versions it supports, and the framework refuses an incompatible one with a clear console message.
+```bash
+node node-tools/install.js add helper forms@0.1.0
+```
+
+- **Where it goes:** `components/<name>/` or `helpers/<name>/`, pinned with a checksum in `app/project-viraspa.json`.
+- **Dependencies:** when a package needs another one (its manifest's `dependencies`), `install.js` installs and pins that one too.
+- **Loading a component:** nothing else is needed. The framework loads a `vs-*` component the first time its tag appears on a page, together with the helpers it depends on.
+- **Loading a helper for your own code:** add its name to `helpers` in `app/config/startup.js`.
+- **Version check:** each manifest declares which framework versions it supports, and the framework refuses an incompatible one with a clear console message.
 
 ## Repository layout
 
 ```
 components/
   <tag>/
-    component-viraspa.json   name, tag, version, release date, framework versions, file checksums
+    component-viraspa.json   name, tag, version, release date, framework versions, dependencies, file checksums
     <tag>.js, .html, .css, .model.json
     README.md                the component's documentation
+helpers/
+  <name>/
+    helper-viraspa.json      name, version, release date, framework versions, namespace, scripts, styles, dependencies, file checksums
+    <name>.js (.css)
+    README.md
 Documents/
-  component-doc-template.md  the structure every component README follows
+  component-doc-template.md  the structure every package README follows
   release-notes.md
 ```
 
-## Publishing a component version (maintainers)
+## Naming
 
-1. Change the files, bump `version` and `releaseDate` in `component-viraspa.json`, and add a line to the README's version history.
+- **Components:** `vs-<family>-<variant>`, where the plain family name is the most common variant, so related components sort together: `vs-select`, `vs-select-search`, `vs-select-tree`; `vs-input-number`, `vs-input-date`; `vs-table`, `vs-table-entry`.
+- **Helpers:** a short lowercase name (`forms`, `data-entry`), with its API under one `Viraspa.<namespace>` (`Viraspa.forms`).
+
+## Publishing a version (maintainers)
+
+1. Change the files, bump `version` and `releaseDate` in the manifest, and add a line to the README's version history.
 2. Write the file list and checksums with the framework's tool:
    ```bash
    node ../ViRaSPA/node-tools/stamp.js components/vs-card
    ```
-3. Commit, then tag `vs-card-v0.1.0`. The official download source reads `https://cdn.jsdelivr.net/gh/RuzoOwzy/ViRaSPA-Components@vs-card-v0.1.0/components/vs-card/`.
+3. Commit, then tag `<name>-v<version>`, e.g. `vs-card-v0.1.0`. The official download source reads `https://cdn.jsdelivr.net/gh/RuzoOwzy/ViRaSPA-Extensions@vs-card-v0.1.0/components/vs-card/`.
 
-## Writing your own components
+## Third-party packages
 
-Third parties don't add to this repository. They publish an **extension** with their own tag prefix (`owzy-…`), described by `extension-viraspa.json`; see the framework's README.
+Third parties don't add to this repository. They publish their own **extension bundle** with their own tag prefix (`owzy-…`), described by `extension-viraspa.json`, and installed with `install.js add extension …`; see the framework's README. The `vs-` prefix and the `Viraspa` namespace are reserved for the framework and this repository.
