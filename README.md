@@ -9,6 +9,8 @@ The framework keeps only what it needs itself (the shell components `vs-header`,
 
 > **Status:** in development, alongside the framework's first version (0.1.0). Nothing is released or tagged yet.
 
+**Live demo:** <https://ruzoowzy.github.io/ViRaSPA-Extensions/> (GitHub Pages, served from this repository's root: `index.html`, `404.html` and `app/`, with the framework from jsDelivr).
+
 ## Components
 
 | Component | What it is | Isolation | Version |
@@ -52,6 +54,7 @@ helpers/
     helper-viraspa.json      name, version, release date, framework versions, namespace, scripts, styles, dependencies, file checksums
     <name>.js (.css)
     README.md
+index.html, 404.html, app/    the live demo site (GitHub Pages)
 Documents/
   component-doc-template.md  the structure every package README follows
   release-notes.md

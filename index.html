@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- 404.html is a copy of index.html: GitHub Pages answers addresses it has no
+     file for (deep links such as /vs-card) with it, and the app shows the page. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- The demo is served from https://<user>.github.io/<repository>/, a
+       sub-folder: <base> is set to it, so every relative path (and every app
+       route) works there, and at "/" when served locally. -->
+  <script>
+    (function () {
+      var parts = location.pathname.split("/");
+      var folder = location.hostname.slice(-10) === ".github.io" && parts[1] ? "/" + parts[1] + "/" : "/";
+      var base = document.createElement("base");
+      base.href = folder;
+      document.head.appendChild(base);
+    })();
+  </script>
+  <title>ViRaSPA Extensions</title>
+  <meta name="description" content="Live demos of the official ViRaSPA components and helpers.">
+  <link rel="icon" href="app/assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <noscript>This demo needs JavaScript.</noscript>
+  <div id="app">
+    <vs-header sticky>
+      <vs-brand slot="brand" name="ViRaSPA Extensions" logo="app/assets/favicon.svg"></vs-brand>
+      <vs-menu menu="main"></vs-menu>
+      <a slot="end" class="header-action" href="https://github.com/RuzoOwzy/ViRaSPA-Extensions" rel="external">GitHub</a>
+    </vs-header>
+    <main id="page-root"></main>
+    <vs-footer>Official extensions for <a href="https://github.com/RuzoOwzy/ViRaSPA" rel="external">ViRaSPA</a>, the no-build SPA framework · in development</vs-footer>
+  </div>
+
+  <script>
+    window.Viraspa = {
+      settings: {
+        app: { name: "ViRaSPA Extensions demo", version: "0.1.0", releaseDate: "2026-11-08T12:00:00" },
+        cache: { strategy: "release" },
+      },
+    };
+  </script>
+  <!-- The framework from the jsDelivr CDN ("remote mode"), pinned to a commit
+       of the ViRaSPA repository. -->
+  <script src="https://cdn.jsdelivr.net/gh/RuzoOwzy/ViRaSPA@46b3531a491051db9fe20031bff8088d515b5831/ViRaSPA/viraspa/viraspa.js"></script>
+</body>
+</html>

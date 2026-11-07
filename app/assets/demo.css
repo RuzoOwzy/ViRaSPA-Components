@@ -1,0 +1,57 @@
+/* The demo site's own styles (the framework's base.css does the rest). */
+.header-action {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.35rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: var(--vs-radius);
+}
+
+#page-root {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 3rem;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.demo-box {
+  padding: 1rem;
+  border: 1px dashed var(--vs-color-border, #cfd8d5);
+  border-radius: var(--vs-radius);
+  margin: 1rem 0 2rem;
+}
+
+.demo-code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.75rem 1rem;
+  border-radius: var(--vs-radius);
+  background: #10231d;
+  color: #e6f2ee;
+  font: 0.85rem/1.5 ui-monospace, Consolas, monospace;
+  white-space: pre;
+}
+
+.demo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2rem;
+}
+
+.demo-table th,
+.demo-table td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--vs-color-border, #dde5e2);
+  text-align: left;
+  vertical-align: top;
+}
+
+.demo-muted {
+  color: var(--vs-color-muted, #5b6b66);
+}
