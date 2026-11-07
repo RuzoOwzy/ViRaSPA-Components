@@ -31,6 +31,11 @@ The framework keeps only what it needs itself (the shell components `vs-header`,
 | [vs-context-menu](components/vs-context-menu/README.md) | A right-click menu: long press and Menu key too, full keyboard. | full | 0.1.0 |
 | [vs-progress](components/vs-progress/README.md) | A bar, ring or dots, with a value or indeterminate. | full | 0.1.0 |
 | [vs-countdown](components/vs-countdown/README.md) | A countdown to a moment or for some seconds. | full | 0.1.0 |
+| [vs-pagination](components/vs-pagination/README.md) | Page navigation: first/previous/next/last, page box, page size. | full | 0.1.0 |
+| [vs-table](components/vs-table/README.md) | Data table: sort, search, filters, client or server paging, selection, row menu, columns, export, totals, phone cards. | full | 0.1.0 |
+| [vs-table-entry](components/vs-table-entry/README.md) | Typing rows with the keyboard: Enter cell to cell, a new row at the end, computed columns, totals. | full | 0.1.0 |
+| [vs-tree](components/vs-tree/README.md) | A tree: on-demand children, selection, filter, keyboard, add/rename/delete/move with locked nodes. | full | 0.1.0 |
+| [vs-select-tree](components/vs-select-tree/README.md) | A select whose choices are a tree. | full | 0.1.0 |
 
 Every component works with the keyboard alone (its keys can be changed per app, page or element), translates its own labels, and the input components take part in forms like native inputs (`name`, value, `required`, validity, reset).
 
@@ -42,6 +47,7 @@ Every component works with the keyboard alone (its keys can be changed per app, 
 | [data-entry](helpers/data-entry/README.md) | Enter to the next field, Shift+Enter back, the last field adds a row or submits. Every key overridable. | `Viraspa.dataEntry` | 0.1.0 |
 | [filter](helpers/filter/README.md) | Type to filter a list, table or select (case- and accent-insensitive), with highlighting. | `Viraspa.filter` | 0.1.0 |
 | [tooltip](helpers/tooltip/README.md) | Tooltips from `data-tooltip`: hover, keyboard focus, long press. | `Viraspa.tooltip` | 0.1.0 |
+| [table-core](helpers/table-core/README.md) | Shared logic of the two tables (installed with them). | `Viraspa.tableCore` | 0.1.0 |
 
 They need framework features from milestone N7 (the keyboard rules); the framework's sample uses all four on its `/data-entry` page.
 
