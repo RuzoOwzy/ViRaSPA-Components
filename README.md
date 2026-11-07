@@ -18,6 +18,21 @@ The framework keeps only what it needs itself (the shell components `vs-header`,
 | [vs-card](components/vs-card/README.md) | A content card: heading, icon, body, footer. | full | 0.1.0 |
 | [vs-stat-tile](components/vs-stat-tile/README.md) | A key figure for dashboards, with a trend. | full | 0.1.0 |
 | [vs-login-form](components/vs-login-form/README.md) | A configurable sign-in form that works with password managers. | scoped | 0.1.0 |
+| [vs-popup](components/vs-popup/README.md) | A modal popup on the native dialog, plus `Viraspa.popup` alert/confirm/prompt/flash/drop/open. | full | 0.1.0 |
+| [vs-input-number](components/vs-input-number/README.md) | Numbers in the user's format: filtered typing, steps, min/max. | full | 0.1.0 |
+| [vs-input-date](components/vs-input-date/README.md) | Typed dates in the user's order plus a calendar; date, month or datetime. | full | 0.1.0 |
+| [vs-input-password](components/vs-input-password/README.md) | Show/hide, Caps Lock warning, strength meter; password managers find it. | scoped | 0.1.0 |
+| [vs-input-color](components/vs-input-color/README.md) | Swatches, recent colours, hex, full picker, eyedropper. | full | 0.1.0 |
+| [vs-textarea](components/vs-textarea/README.md) | Grows with its text; max rows, overlap mode, count, optional submit key. | full | 0.1.0 |
+| [vs-select](components/vs-select/README.md) | A fixed list: filter box, multiple choice, groups, type-ahead. | full | 0.1.0 |
+| [vs-select-search](components/vs-select-search/README.md) | Type to search a list, a table or the server, then choose. | full | 0.1.0 |
+| [vs-tabs](components/vs-tabs/README.md) | Tabs from labelled panels: keyboard, remembered tab, lazy panels. | full | 0.1.0 |
+| [vs-tooltip](components/vs-tooltip/README.md) | A tooltip with rich content for another element. | full | 0.1.0 |
+| [vs-context-menu](components/vs-context-menu/README.md) | A right-click menu: long press and Menu key too, full keyboard. | full | 0.1.0 |
+| [vs-progress](components/vs-progress/README.md) | A bar, ring or dots, with a value or indeterminate. | full | 0.1.0 |
+| [vs-countdown](components/vs-countdown/README.md) | A countdown to a moment or for some seconds. | full | 0.1.0 |
+
+Every component works with the keyboard alone (its keys can be changed per app, page or element), translates its own labels, and the input components take part in forms like native inputs (`name`, value, `required`, validity, reset).
 
 ## Helpers
 
