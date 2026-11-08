@@ -9,6 +9,9 @@ Each component and helper has its own version (in its manifest) and, once releas
 - **Components vs-pagination, vs-table, vs-table-entry, vs-tree and vs-select-tree, and helper table-core 0.1.0:** first versions (milestone N9). vs-table needs table-core, vs-pagination and vs-progress; vs-table-entry needs table-core; vs-select-tree needs vs-tree - installed automatically.
 - **Components vs-media-viewer, vs-image-cropper and vs-rich-text-editor 0.1.0:** first versions (milestone N10), all three written entirely in our own code. The editor's output always goes through its own sanitizer (`VsRichTextEditor.sanitize`, an allow-list of tags and safe link and image addresses).
 
+- **vs-table and table-core 0.1.0 (milestone N11):** on phones, `phone-layout="scroll"` keeps the first column fixed, and a column with `phone="hide"` is left out on narrow screens.
+- **Demo site (milestone N11):** pages for every component and helper (Inputs, Selects, Tables, Tree, Popups & menus, Progress, Media, Editor, Helpers), with made-up data; the framework is pinned to its latest commit.
+
 - **Repository renamed** from ViRaSPA-Components to ViRaSPA-Extensions: it holds official components and, from now on, official helpers (`helpers/<name>/`, `helper-viraspa.json`).
 - **Manifests** may list `dependencies` (`[{ kind, name, version }]`), installed automatically by `install.js`.
 - **vs-card, vs-stat-tile, vs-login-form 0.1.0:** framework requirement corrected to 0.1.0 (the framework's first version; "0.2.0" was a working number).

@@ -1,0 +1,21 @@
+<h1>Media viewer and image cropper</h1>
+<p>Both are written entirely in our own code. <a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/components/vs-media-viewer/README.md" rel="external">vs-media-viewer</a> shows images, SVG, PDF, video and documents full screen, with zoom, pan, rotation and a gallery. <a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/components/vs-image-cropper/README.md" rel="external">vs-image-cropper</a> crops a picture to a fixed or free shape.</p>
+
+<h2>A gallery</h2>
+<p class="demo-muted">Click a picture. Zoom with the wheel, a pinch or + and −, pan by dragging or with the arrows when zoomed, rotate with R, fit with 0. Move between items with Left/Right or a swipe, and close with Escape.</p>
+<vs-media-viewer gallery download class="demo-box demo-row">
+  <img src="app/assets/sample-landscape.svg" alt="A landscape" width="150" data-caption="An SVG picture: zoom in, the lines stay sharp.">
+  <img src="app/assets/sample-receipt.svg" alt="Receipt 1042" width="80" data-caption="Receipt 1042 · 8 Nov 2026">
+  <img src="app/assets/favicon.svg" alt="The ViRaSPA logo" width="80">
+  <a href="components/vs-media-viewer/README.md">A document (opens as a link)</a>
+</vs-media-viewer>
+
+<h2>Crop a picture</h2>
+<p class="demo-muted">Drag the box or its handles. With the keyboard, the arrows move it (Shift: 10 pixels), Alt+arrows resize it, and + − R zoom and rotate. You can also choose or drop your own image: nothing is uploaded.</p>
+<div class="demo-box">
+  <vs-image-cropper id="d-cropper" src="app/assets/sample-landscape.svg" aspect="1" output-width="200" output-type="image/png"></vs-image-cropper>
+  <p class="demo-row"><button type="button" id="d-crop">Crop</button> <img id="d-crop-result" alt="The cropped picture" width="100" hidden> <span class="demo-muted" id="d-crop-output" role="status"></span></p>
+</div>
+
+<code class="demo-code">viewer.open([{ src: "receipt.jpg", title: "Receipt 1042" }, { src: "invoice.pdf" }], 0);
+const blob = await cropper.toBlob();      // 200 × 200 PNG (output-width="200", aspect="1")</code>

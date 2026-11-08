@@ -1,0 +1,26 @@
+<h1>Selects</h1>
+<p>One family, three ways to choose. <code>vs-select</code> is for a fixed list, <code>vs-select-search</code> searches a list, a table or the server as you type, and <code>vs-select-tree</code> offers choices arranged as a tree.</p>
+
+<div class="demo-box demo-form">
+  <div class="demo-field"><label for="d-region">Region (<a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/components/vs-select/README.md" rel="external">vs-select</a>)</label>
+    <vs-select id="d-region" name="region" placeholder="Choose a region" clearable>
+      <option value="dar">Dar es Salaam</option><option value="aru">Arusha</option><option value="dod">Dodoma</option><option value="mwa">Mwanza</option>
+      <optgroup label="South"><option value="mbe">Mbeya</option><option value="iri">Iringa</option><option value="mtw" disabled>Mtwara (closed)</option></optgroup>
+    </vs-select></div>
+  <div class="demo-field"><label for="d-tags">Tags (several)</label>
+    <vs-select id="d-tags" name="tags" multiple filter="off"><option value="vip">VIP</option><option value="new">New</option><option value="debt">Has debt</option></vs-select></div>
+  <div class="demo-field"><label for="d-product">Product (<a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/components/vs-select-search/README.md" rel="external">vs-select-search</a>)</label>
+    <vs-select-search id="d-product" name="product" columns="price" placeholder="Rice, oil…"></vs-select-search></div>
+  <div class="demo-field"><label for="d-customer">Customer ("server", 300 ms delay)</label>
+    <vs-select-search id="d-customer" name="customer" columns="city" placeholder="Type a name…"></vs-select-search></div>
+  <div class="demo-field"><label for="d-category">Category (<a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/components/vs-select-tree/README.md" rel="external">vs-select-tree</a>)</label>
+    <vs-select-tree id="d-category" name="category" placeholder="Choose a category" filter></vs-select-tree></div>
+  <div class="demo-field"><label for="d-regions">Regions (several, whole branches)</label>
+    <vs-select-tree id="d-regions" name="regions" multiple cascade placeholder="Choose regions"></vs-select-tree></div>
+</div>
+<p class="demo-muted" id="selects-output" role="status">Choose something.</p>
+
+<code class="demo-code">customer.source = async ({ text, signal }) =&gt; {
+  const people = await api.searchCustomers(text, { signal });   // cancelled when the user types on
+  return people.map((p) =&gt; ({ value: p.id, label: p.name, city: p.city }));
+};</code>

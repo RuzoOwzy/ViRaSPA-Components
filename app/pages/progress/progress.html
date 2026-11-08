@@ -1,0 +1,18 @@
+<h1>Progress and countdown</h1>
+<p><a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/components/vs-progress/README.md" rel="external">vs-progress</a> is a bar, a ring or dots, showing a value or running without one. <a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/components/vs-countdown/README.md" rel="external">vs-countdown</a> counts down to a moment or for a number of seconds.</p>
+
+<div class="demo-box demo-stack">
+  <vs-progress id="d-bar" value="40" show-value></vs-progress>
+  <vs-progress label="Loading"></vs-progress>
+  <div class="demo-row">
+    <vs-progress type="ring" value="3" max="8" show-value="count"></vs-progress>
+    <vs-progress type="ring" label="Working"></vs-progress>
+    <vs-progress type="dots" label="Loading orders"></vs-progress>
+    <button type="button" id="d-step">+10%</button>
+  </div>
+  <p>Offer ends in <vs-countdown seconds="125" finished-text="Offer ended"></vs-countdown></p>
+</div>
+
+<code class="demo-code">&lt;vs-progress value="40" show-value&gt;&lt;/vs-progress&gt;
+&lt;vs-progress type="ring" label="Working"&gt;&lt;/vs-progress&gt;
+&lt;vs-countdown seconds="125" finished-text="Offer ended"&gt;&lt;/vs-countdown&gt;</code>

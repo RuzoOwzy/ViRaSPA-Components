@@ -1,0 +1,26 @@
+<h1>Helpers</h1>
+<p>Small optional APIs, each in its own namespace and loaded at startup (<code>startup.js</code> <code>helpers</code>) or with a component that needs it.</p>
+
+<h2><a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/helpers/forms/README.md" rel="external">forms</a> and <a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/helpers/data-entry/README.md" rel="external">data-entry</a></h2>
+<p class="demo-muted">Required fields get their * by themselves. Enter moves to the next field and Shift+Enter goes back. Enter on the last field submits, and the validation messages explain any problem. "Read-only" switches the whole form and restores it exactly.</p>
+<form class="demo-box demo-form" id="d-form" data-entry-mode data-entry-submit>
+  <div class="demo-field"><label for="d-name">Customer name</label><input id="d-name" name="name" required></div>
+  <div class="demo-field"><label for="d-phone">Phone</label><input id="d-phone" name="phone" type="tel" pattern="\+?[0-9 ]{9,15}" data-error-message="Write a phone number, e.g. +255 712 345 678."></div>
+  <div class="demo-field"><label for="d-city">City</label><select id="d-city" name="city" required><option value="">Choose…</option><option>Dar es Salaam</option><option>Arusha</option><option>Dodoma</option></select></div>
+  <div class="demo-field"><label for="d-credit">Credit limit</label><vs-input-number id="d-credit" name="credit" min="0" step="1000" value="50000"></vs-input-number></div>
+  <div class="demo-field demo-wide demo-row"><button type="submit">Save</button> <button type="button" id="d-readonly" data-readonly-keep>Read-only</button> <span class="demo-muted" id="d-form-output" role="status"></span></div>
+</form>
+
+<h2><a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/helpers/filter/README.md" rel="external">filter</a></h2>
+<p class="demo-muted">Letter case and accents are ignored, and every word must appear: "elodie aru" finds Élodie in Arusha. Matches are highlighted.</p>
+<div class="demo-box">
+  <input type="search" data-filter-for="#d-people" data-filter-empty="No match" placeholder="Filter the people…" aria-label="Filter the people">
+  <ul id="d-people" class="demo-list"></ul>
+</div>
+
+<h2><a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/helpers/tooltip/README.md" rel="external">tooltip</a></h2>
+<div class="demo-box demo-row">
+  <button type="button" data-tooltip="Save (Ctrl+S)">Save</button>
+  <button type="button" data-tooltip="Shown on hover, keyboard focus and a long press" data-tooltip-placement="bottom">Hover or focus me</button>
+  <span tabindex="0" data-tooltip="Due in 3 days" data-tooltip-placement="right">Invoice 1042</span>
+</div>

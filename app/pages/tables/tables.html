@@ -1,0 +1,34 @@
+<h1>Tables</h1>
+<p><a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/components/vs-table/README.md" rel="external">vs-table</a> shows data. It can sort (Shift+click adds a column), search ("elodie aru" finds Élodie's orders in Arusha), filter by column, select across pages, export to CSV and choose columns, and on phones it shows each row as a card. <a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/components/vs-table-entry/README.md" rel="external">vs-table-entry</a> is for typing rows with the keyboard.</p>
+
+<h2>Orders (120 rows in the browser)</h2>
+<vs-table id="d-orders" key-field="number" page-size="10" search selectable="multiple" export column-chooser phone-layout="cards" label="Orders">
+  <column field="number" label="Order" width="100"></column>
+  <column field="customer" label="Customer"></column>
+  <column field="city" label="City" filterable></column>
+  <column field="date" label="Date" format="date:'short'" width="120" phone="hide"></column>
+  <column field="status" label="Status" filterable width="120"></column>
+  <column field="amount" label="Amount" format="currency:'TZS'" total="sum" width="150"></column>
+  <button slot="toolbar" type="button" id="d-delete" disabled>Delete selected</button>
+</vs-table>
+<p class="demo-muted" id="tables-output" role="status">Double-click a row or press Enter on it to open it.</p>
+
+<h2>Typing a sale</h2>
+<p class="demo-muted">Enter moves from cell to cell and adds a row at the end. Ctrl+Delete removes a row. Amount is computed (with VAT), and the totals follow.</p>
+<vs-table-entry id="d-lines" name="lines" add-button delete-button label="Sale lines">
+  <column field="product" label="Product" required></column>
+  <column field="quantity" label="Qty" editor="number" min="1" width="90" total="sum"></column>
+  <column field="price" label="Price" editor="number" width="130"></column>
+  <column field="vat" label="VAT %" editor="select" options="0,18" width="100"></column>
+  <column field="amount" label="Amount" format="currency:'TZS'" total="sum" width="160"></column>
+</vs-table-entry>
+
+<h2>Pagination on its own</h2>
+<p class="demo-muted"><a href="https://github.com/RuzoOwzy/ViRaSPA-Extensions/blob/main/components/vs-pagination/README.md" rel="external">vs-pagination</a> is used inside vs-table, and also works with any list of your own.</p>
+<vs-pagination id="d-pager" total="135" page-size="20" page-sizes="10,20,50"></vs-pagination>
+
+<code class="demo-code">table.rows = orders;                       // or a server source:
+table.source = async ({ page, pageSize, search, sort, filters, signal }) =&gt; {
+  const r = await api.orders({ page, pageSize, search, sort, filters }, { signal });
+  return { rows: r.items, total: r.count };
+};</code>

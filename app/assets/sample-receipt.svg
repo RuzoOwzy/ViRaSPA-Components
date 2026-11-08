@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="720" viewBox="0 0 480 720">
+  <title>A sample receipt</title>
+  <rect width="480" height="720" fill="#fdfcf7"/>
+  <g font-family="Consolas, monospace" font-size="22" fill="#222">
+    <text x="240" y="70" text-anchor="middle" font-size="30" font-weight="bold">DUKA LA MFANO</text>
+    <text x="240" y="105" text-anchor="middle">Receipt 1042 · 8 Nov 2026</text>
+    <text x="40" y="180">Rice 5 kg     x2</text><text x="440" y="180" text-anchor="end">36,000</text>
+    <text x="40" y="220">Cooking oil   x1</text><text x="440" y="220" text-anchor="end">21,500</text>
+    <text x="40" y="260">Sugar 2 kg    x3</text><text x="440" y="260" text-anchor="end">21,000</text>
+    <line x1="40" y1="290" x2="440" y2="290" stroke="#222" stroke-dasharray="6 6"/>
+    <text x="40" y="330" font-weight="bold">TOTAL TZS</text><text x="440" y="330" text-anchor="end" font-weight="bold">78,500</text>
+    <text x="240" y="660" text-anchor="middle">Asante!</text>
+  </g>
+</svg>
