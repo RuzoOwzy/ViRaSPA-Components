@@ -36,6 +36,9 @@ The framework keeps only what it needs itself (the shell components `vs-header`,
 | [vs-table-entry](components/vs-table-entry/README.md) | Typing rows with the keyboard: Enter cell to cell, a new row at the end, computed columns, totals. | full | 0.1.0 |
 | [vs-tree](components/vs-tree/README.md) | A tree: on-demand children, selection, filter, keyboard, add/rename/delete/move with locked nodes. | full | 0.1.0 |
 | [vs-select-tree](components/vs-select-tree/README.md) | A select whose choices are a tree. | full | 0.1.0 |
+| [vs-media-viewer](components/vs-media-viewer/README.md) | Full-screen viewer for images, PDF, video and documents: zoom, pan, rotate, gallery. | full | 0.1.0 |
+| [vs-image-cropper](components/vs-image-cropper/README.md) | Crop an image: fixed or free shape, zoom, rotate, output size and type, upload. | full | 0.1.0 |
+| [vs-rich-text-editor](components/vs-rich-text-editor/README.md) | A rich text editor in our own code, with clean and safe HTML out. | scoped | 0.1.0 |
 
 Every component works with the keyboard alone (its keys can be changed per app, page or element), translates its own labels, and the input components take part in forms like native inputs (`name`, value, `required`, validity, reset).
 
