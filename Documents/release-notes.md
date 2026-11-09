@@ -12,6 +12,7 @@ Each component and helper has its own version (in its manifest) and, once releas
 - **vs-table and table-core 0.1.0 (milestone N11):** on phones, `phone-layout="scroll"` keeps the first column fixed, and a column with `phone="hide"` is left out on narrow screens.
 - **Demo site (milestone N11):** pages for every component and helper (Inputs, Selects, Tables, Tree, Popups & menus, Progress, Media, Editor, Helpers), with made-up data; the framework is pinned to its latest commit.
 
+- **Repository layout like the framework's:** the packages and the demo site moved into `ViRaSPA-Extensions/` (`ViRaSPA-Extensions/components/<tag>/`, `ViRaSPA-Extensions/helpers/<name>/`); `Documents/`, the README and the git files stay at the top. GitHub Pages publishes the inner folder through `.github/workflows/pages.yml`. The `official` download source reads `…ViRaSPA-Extensions@<name>-v<version>/ViRaSPA-Extensions/<kind>/<name>`.
 - **Repository renamed** from ViRaSPA-Components to ViRaSPA-Extensions: it holds official components and, from now on, official helpers (`helpers/<name>/`, `helper-viraspa.json`).
 - **Manifests** may list `dependencies` (`[{ kind, name, version }]`), installed automatically by `install.js`.
 - **vs-card, vs-stat-tile, vs-login-form 0.1.0:** framework requirement corrected to 0.1.0 (the framework's first version; "0.2.0" was a working number).
