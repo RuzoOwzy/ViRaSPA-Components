@@ -1,0 +1,14 @@
+<h1>vs-input-date</h1>
+<p class="demo-muted">Type the date in the user's own order, or pick it from the calendar. Sundays are disabled for the due date here, and dates before 2026 are refused.</p>
+<form class="demo-box demo-form" id="d-form">
+  <div class="demo-field"><label for="d-due">Due date</label>
+    <vs-input-date id="d-due" name="due" min="2026-01-01" required></vs-input-date></div>
+  <div class="demo-field"><label for="d-month">Month</label>
+    <vs-input-date id="d-month" name="month" type="month"></vs-input-date></div>
+  <div class="demo-field"><label for="d-when">Delivery (date and time)</label>
+    <vs-input-date id="d-when" name="when" type="datetime"></vs-input-date></div>
+</form>
+<p class="demo-output" id="d-output" role="status">Choose a date.</p>
+
+<code class="demo-code">&lt;vs-input-date name="due" min="2026-01-01" required /&gt;
+due.isDateDisabled = (iso) =&gt; new Date(iso).getDay() === 0;   // no Sundays</code>

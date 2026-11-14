@@ -1,0 +1,9 @@
+<h1>filter</h1>
+<p class="demo-muted">Letter case and accents are ignored, and every word must appear: "elodie aru" finds Élodie in Arusha. Matches are highlighted. The search box of this site's side menu works the same way.</p>
+<div class="demo-box">
+  <input type="search" data-filter-for="#d-people" data-filter-empty="No match" placeholder="Filter the people…" aria-label="Filter the people">
+  <ul id="d-people" class="demo-list"></ul>
+</div>
+
+<code class="demo-code">&lt;input type="search" data-filter-for="#customers" data-filter-empty="No match"&gt;
+const filter = Viraspa.filter.bind(input, list, { columns: [0, 2] });</code>

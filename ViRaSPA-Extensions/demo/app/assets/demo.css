@@ -1,0 +1,174 @@
+/* The demo site's own styles (the framework's base.css does the rest). */
+/* ---- Shell: the packages side menu and the page ---------------------- */
+vs-header vs-menu[menu="top"] {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.demo-body {
+  display: flex;
+  align-items: flex-start;
+  min-height: calc(100vh - 3.25rem);
+}
+
+/* Its panel stays in view below the sticky header (vs-sidebar does that
+   itself with --vs-sidebar-top); on phones it floats over the page. */
+#packages {
+  --vs-sidebar-top: 3.25rem;
+  --vs-sidebar-width: 16rem;
+  align-self: stretch;
+}
+
+#page-root {
+  flex: 1;
+  min-width: 0;
+  padding: 1.5rem clamp(1rem, 3vw, 2.5rem) 3rem;
+}
+
+#page-root > * {
+  max-width: 1200px;
+}
+
+/* ---- The header of every package page (app/config/package-pages.js) ---- */
+.pkg-head {
+  margin: -0.25rem 0 1.5rem;
+}
+
+.pkg-summary {
+  margin: 0 0 0.5rem;
+  font-size: 1.05rem;
+}
+
+.pkg-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.75rem;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.pkg-kind,
+.pkg-group {
+  padding: 0.1rem 0.5rem;
+  border-radius: 999px;
+  background: var(--vs-color-primary-soft, #eef0fd);
+  color: var(--vs-color-primary-strong, #4338ca);
+  font-weight: 600;
+}
+
+.pkg-group {
+  background: var(--vs-color-surface-muted, #eef0f6);
+  color: var(--vs-color-text-muted, #5a6377);
+}
+
+.pkg-links code {
+  padding: 0.1rem 0.4rem;
+  border-radius: var(--vs-radius);
+  background: var(--vs-color-surface-muted, #eef0f6);
+  font-size: 0.85em;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 1.75rem;
+}
+
+.demo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.demo-box {
+  padding: 1rem;
+  border: 1px dashed var(--vs-color-border, #cfd5e3);
+  border-radius: var(--vs-radius);
+  margin: 1rem 0 2rem;
+}
+
+.demo-code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.75rem 1rem;
+  border-radius: var(--vs-radius);
+  background: #141c33;
+  color: #e4e8f5;
+  font: 0.85rem/1.5 ui-monospace, Consolas, monospace;
+  white-space: pre;
+}
+
+.demo-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 2rem;
+}
+
+.demo-table th,
+.demo-table td {
+  padding: 0.5rem 0.6rem;
+  border-bottom: 1px solid var(--vs-color-border, #dce0ea);
+  text-align: left;
+  vertical-align: top;
+}
+
+.demo-muted {
+  color: var(--vs-color-muted, #5a6377);
+}
+
+/* Forms and rows of examples. */
+.demo-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.demo-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.demo-wide {
+  grid-column: 1 / -1;
+}
+
+.demo-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.demo-stack {
+  display: grid;
+  gap: 1rem;
+}
+
+.demo-output {
+  min-height: 1.5rem;
+  margin: 0 0 2rem;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font: 0.85rem/1.5 ui-monospace, Consolas, monospace;
+}
+
+.demo-list {
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  columns: 2 220px;
+}
+
+.demo-menu-target {
+  flex: 1 1 260px;
+  padding: 1.25rem;
+  border-radius: var(--vs-radius);
+  background: var(--vs-color-surface-muted, #eef0f6);
+}
+
+h2 {
+  margin-top: 2rem;
+}

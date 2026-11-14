@@ -1,0 +1,8 @@
+<h1>table-core</h1>
+<p class="demo-muted">The logic <a href="vs-table">vs-table</a> and <a href="vs-table-entry">vs-table-entry</a> share: columns, formats, sorting, totals and the phone layouts. It is installed with them; app code uses it to build columns.</p>
+<div class="demo-box">
+  <p>Columns read from the table's <code>&lt;column&gt;</code> elements, here as JSON:</p>
+  <pre class="demo-output" id="d-output"></pre>
+</div>
+
+<code class="demo-code">lines.columns = Viraspa.tableCore.columnsFromChildren(lines).map((c) =&gt; …);</code>

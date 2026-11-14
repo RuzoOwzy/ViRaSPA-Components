@@ -1,0 +1,14 @@
+<h1>vs-select-search</h1>
+<p class="demo-muted">Type to search a list, a table or the server, then choose. A search sent to the server is cancelled when you type on.</p>
+<form class="demo-box demo-form" id="d-form">
+  <div class="demo-field"><label for="d-product">Product (a list)</label>
+    <vs-select-search id="d-product" name="product" columns="price" placeholder="Rice, oil…"></vs-select-search></div>
+  <div class="demo-field"><label for="d-customer">Customer ("server", 300 ms delay)</label>
+    <vs-select-search id="d-customer" name="customer" columns="city" placeholder="Type a name…"></vs-select-search></div>
+</form>
+<p class="demo-output" id="d-output" role="status">Choose something.</p>
+
+<code class="demo-code">customer.source = async ({ text, signal }) =&gt; {
+  const people = await api.searchCustomers(text, { signal });   // cancelled when the user types on
+  return people.map((p) =&gt; ({ value: p.id, label: p.name, city: p.city }));
+};</code>

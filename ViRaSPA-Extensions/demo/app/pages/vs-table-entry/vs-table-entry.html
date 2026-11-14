@@ -1,0 +1,13 @@
+<h1>vs-table-entry</h1>
+<p class="demo-muted">Typing a sale: Enter moves from cell to cell and adds a row at the end, Ctrl+Delete removes a row. Amount is computed (with VAT), and the totals follow.</p>
+<vs-table-entry id="d-lines" name="lines" add-button delete-button label="Sale lines">
+  <column field="product" label="Product" required></column>
+  <column field="quantity" label="Qty" editor="number" min="1" width="90" total="sum"></column>
+  <column field="price" label="Price" editor="number" width="130"></column>
+  <column field="vat" label="VAT %" editor="select" options="0,18" width="100"></column>
+  <column field="amount" label="Amount" format="currency:'TZS'" total="sum" width="160"></column>
+</vs-table-entry>
+
+<code class="demo-code">lines.columns = Viraspa.tableCore.columnsFromChildren(lines).map((c) =&gt;
+  c.field === "amount" ? { ...c, value: (row) =&gt; row.quantity * row.price * (1 + row.vat / 100) } : c);
+lines.newRow = () =&gt; ({ quantity: 1, vat: "18" });</code>

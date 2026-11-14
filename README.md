@@ -9,7 +9,7 @@ The framework keeps only what it needs itself (the shell components `vs-header`,
 
 > **Status:** in development, alongside the framework's first version (0.1.0). Nothing is released or tagged yet.
 
-**Live demo:** <https://ruzoowzy.github.io/ViRaSPA-Extensions/> (GitHub Pages, published from the `ViRaSPA-Extensions/` folder by the workflow in `.github/workflows/pages.yml`: `index.html`, `404.html` and `app/`, with the framework from jsDelivr).
+**Live demo:** <https://ruzoowzy.github.io/ViRaSPA-Extensions/> (GitHub Pages: the workflow in `.github/workflows/pages.yml` publishes `ViRaSPA-Extensions/demo/` with `components/` and `helpers/` beside it; the framework comes from jsDelivr). Every package has its own page, listed by group in a side menu with a search box.
 
 ## Components
 
@@ -75,7 +75,7 @@ node node-tools/install.js add helper forms@0.1.0
 ## Repository layout
 
 ```
-.github/workflows/pages.yml    publishes ViRaSPA-Extensions/ to GitHub Pages on every push to main
+.github/workflows/pages.yml    publishes the demo (with the packages beside it) to GitHub Pages on every push to main
 Documents/
   component-doc-template.md    the structure every package README follows
   release-notes.md
@@ -91,8 +91,19 @@ ViRaSPA-Extensions/            everything that is installed or served
       helper-viraspa.json      name, version, release date, framework versions, namespace, scripts, styles, dependencies, file checksums
       <name>.js (.css)
       README.md
-  index.html, 404.html, app/   the live demo site (GitHub Pages)
+  demo/                        the live demo site (GitHub Pages)
+    index.html, 404.html       (404.html is a copy: Pages answers deep links with it)
+    app/config/routes.js       the catalog of packages, by group; the routes and menus come from it
+    app/pages/<package>/       one page per package
 ```
+
+**Previewing the demo locally:** it loads packages from `components/` and `helpers/` beside its own files, so serve the demo folder with those mounted (and, while developing the framework, the framework beside it; on `localhost` the demo uses `viraspa/` instead of the pinned CDN copy):
+
+```bash
+node ../ViRaSPA/node-tools/serve.js --port 8029 --site-folder ViRaSPA-Extensions/demo --mount /components=../components,/helpers=../helpers,/viraspa=../../../ViRaSPA/ViRaSPA/viraspa
+```
+
+Add `?framework=cdn` to the address to try the pinned CDN framework locally instead.
 
 The layout matches the framework repository: repository files at the top, the real content in a folder of the same name.
 

@@ -1,0 +1,10 @@
+<h1>vs-tree</h1>
+<p class="demo-muted">A chart of accounts. The arrows move, Right/Left open and close, Insert adds, F2 renames, Delete removes (leaves only), and Ctrl+X then Ctrl+V moves. Locked accounts can't change. Hover a row for its + and × buttons. "Customers" loads its children when opened.</p>
+<div class="demo-box">
+  <vs-tree id="d-accounts" filter editable delete-leaves-only label="Chart of accounts"></vs-tree>
+</div>
+<p class="demo-output" id="d-output" role="status"></p>
+
+<code class="demo-code">accounts.nodes = [{ id: 1, label: "Assets", locked: true, children: [ … ] }];
+accounts.load = async (node, { signal }) =&gt; api.children(node.id, { signal });   // hasChildren: true
+accounts.onAdd = async (parent, label) =&gt; ({ id: await api.add(parent.id, label), label });</code>

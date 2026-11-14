@@ -1,0 +1,19 @@
+<h1>vs-popup</h1>
+<p class="demo-muted">A modal popup on the native dialog, plus <code>Viraspa.popup</code> for the everyday ones: alert, confirm, prompt, a short flash and a message that drops in.</p>
+<div class="demo-box demo-row">
+  <button type="button" data-demo="alert">Alert</button>
+  <button type="button" data-demo="confirm">Confirm</button>
+  <button type="button" data-demo="prompt">Prompt</button>
+  <button type="button" data-demo="flash">Flash</button>
+  <button type="button" data-demo="drop">Drop</button>
+  <button type="button" data-demo="custom">Custom popup</button>
+  <vs-popup id="d-popup" heading="Edit customer" size="small">
+    <p>Any content goes here, with its own buttons.</p>
+    <label>Name <input value="Amina Juma"></label>
+    <div slot="footer" class="vs-popup-actions"><button type="button" data-close>Cancel</button><button type="button" data-close="save" class="primary">Save</button></div>
+  </vs-popup>
+</div>
+<p class="demo-output" id="d-output" role="status"></p>
+
+<code class="demo-code">if (await Viraspa.popup.confirm("Delete invoice 1042?", { okLabel: "Delete", danger: true })) { … }
+const name = await Viraspa.popup.prompt("New customer name", { required: true });</code>

@@ -1,0 +1,14 @@
+<h1>vs-rich-text-editor</h1>
+<p class="demo-muted">Headings, bold/italic/underline/strike, lists (Tab indents), quote, alignment, links (Ctrl+K), images, undo/redo and clear formatting. Paste from Word or a web page and only clean HTML stays. Alt+F10 goes to the toolbar.</p>
+
+<label for="d-editor">Message</label>
+<vs-rich-text-editor id="d-editor" name="message" toolbar="full" show-count maxlength="2000" placeholder="Write your message…" sticky-toolbar></vs-rich-text-editor>
+<p><button type="button" id="d-html">Show the clean HTML</button></p>
+<pre class="demo-output" id="d-output"></pre>
+
+<h2>A smaller toolbar</h2>
+<vs-rich-text-editor toolbar="minimal underline -link" aria-label="Short note" value="<p>Only <strong>bold</strong>, <em>italic</em>, lists and underline here.</p>"></vs-rich-text-editor>
+
+<code class="demo-code">&lt;vs-rich-text-editor name="body" toolbar="standard" maxlength="5000" show-count /&gt;
+editor.value = "&lt;p&gt;Hello &lt;strong&gt;Amina&lt;/strong&gt;&lt;/p&gt;";
+editor.uploadImage = async (file) =&gt; (await api.upload(file)).url;</code>

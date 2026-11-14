@@ -1,0 +1,13 @@
+<h1>vs-tabs</h1>
+<p class="demo-muted">Tabs from labelled child panels. The arrow keys move between tabs, the last tab is remembered, and a lazy panel is created the first time it is shown.</p>
+<vs-tabs remember="demo-tabs">
+  <section label="General" icon="lucide:user"><p>Amina Juma, customer since 2021.</p></section>
+  <section label="Addresses" icon="lucide:map-pin"><p>Dar es Salaam, Arusha and Dodoma.</p></section>
+  <section label="History" lazy><template><p>This panel's content was created the first time it was shown (lazy).</p></template></section>
+  <section label="Disabled" disabled><p>Never shown.</p></section>
+</vs-tabs>
+
+<code class="demo-code">&lt;vs-tabs remember="customer-tabs"&gt;
+  &lt;section label="General" icon="lucide:user"&gt; … &lt;/section&gt;
+  &lt;section label="History" lazy&gt;&lt;template&gt; … &lt;/template&gt;&lt;/section&gt;
+&lt;/vs-tabs&gt;</code>

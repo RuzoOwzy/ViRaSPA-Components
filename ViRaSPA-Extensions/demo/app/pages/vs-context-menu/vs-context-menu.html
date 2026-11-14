@@ -1,0 +1,17 @@
+<h1>vs-context-menu</h1>
+<p class="demo-muted">A right-click menu. It also opens with a long press on a phone and with Shift+F10 or the Menu key, and works fully with the keyboard.</p>
+<div class="demo-box demo-row">
+  <div class="demo-menu-target" id="d-menu-target" tabindex="0">Right-click here (or focus it and press Shift+F10, or long-press on a phone).</div>
+  <vs-context-menu for="#d-menu-target">
+    <button value="open" data-icon="lucide:external-link" data-shortcut="Enter">Open</button>
+    <button value="edit" data-icon="lucide:pencil" data-shortcut="F2">Edit</button>
+    <hr>
+    <button value="delete" data-icon="lucide:trash-2" class="danger">Delete</button>
+  </vs-context-menu>
+</div>
+<p class="demo-output" id="d-output" role="status"></p>
+
+<code class="demo-code">&lt;vs-context-menu for="#orders"&gt;
+  &lt;button value="open" data-icon="lucide:external-link"&gt;Open&lt;/button&gt; …
+&lt;/vs-context-menu&gt;
+menu.addEventListener("vs-menu-select", (e) =&gt; run(e.detail.value));</code>

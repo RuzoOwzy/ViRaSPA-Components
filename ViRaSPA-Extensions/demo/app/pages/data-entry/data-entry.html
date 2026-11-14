@@ -1,0 +1,12 @@
+<h1>data-entry</h1>
+<p class="demo-muted">Enter moves to the next field and Shift+Enter goes back. Enter on the last field submits the form. Every key can be changed per app, page or element.</p>
+<form class="demo-box demo-form" id="d-form" data-entry-mode data-entry-submit>
+  <div class="demo-field"><label for="d-product">Product</label><input id="d-product" name="product" required></div>
+  <div class="demo-field"><label for="d-qty">Quantity</label><vs-input-number id="d-qty" name="qty" min="1" value="1"></vs-input-number></div>
+  <div class="demo-field"><label for="d-due">Delivery date</label><vs-input-date id="d-due" name="due"></vs-input-date></div>
+  <div class="demo-field"><label for="d-note">Note</label><input id="d-note" name="note"></div>
+  <div class="demo-field demo-wide"><button type="submit">Add</button></div>
+</form>
+<p class="demo-output" id="d-output" role="status"></p>
+
+<code class="demo-code">&lt;form data-entry-mode data-entry-submit&gt; … &lt;/form&gt;</code>

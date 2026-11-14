@@ -1,0 +1,14 @@
+<h1>forms</h1>
+<p class="demo-muted">Required fields get their * by themselves, and the validation messages explain any problem in plain words. "Read-only" switches the whole form and restores it exactly.</p>
+<form class="demo-box demo-form" id="d-form">
+  <div class="demo-field"><label for="d-name">Customer name</label><input id="d-name" name="name" required></div>
+  <div class="demo-field"><label for="d-phone">Phone</label><input id="d-phone" name="phone" type="tel" pattern="\+?[0-9 ]{9,15}" data-error-message="Write a phone number, e.g. +255 712 345 678."></div>
+  <div class="demo-field"><label for="d-city">City</label><select id="d-city" name="city" required><option value="">Choose…</option><option>Dar es Salaam</option><option>Arusha</option><option>Dodoma</option></select></div>
+  <div class="demo-field"><label for="d-credit">Credit limit</label><vs-input-number id="d-credit" name="credit" min="0" step="1000" value="50000"></vs-input-number></div>
+  <div class="demo-field demo-wide demo-row"><button type="submit">Save</button> <button type="button" id="d-readonly" data-readonly-keep>Read-only</button></div>
+</form>
+<p class="demo-output" id="d-output" role="status"></p>
+
+<code class="demo-code">if (!Viraspa.forms.validate(form).valid) return;
+const values = Viraspa.forms.values(form);
+Viraspa.forms.setReadOnly(form, true);</code>

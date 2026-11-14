@@ -1,0 +1,15 @@
+<h1>vs-progress</h1>
+<p class="demo-muted">A bar, a ring or dots, showing a value or running without one.</p>
+<div class="demo-box demo-stack">
+  <vs-progress id="d-bar" value="40" show-value></vs-progress>
+  <vs-progress label="Loading"></vs-progress>
+  <div class="demo-row">
+    <vs-progress type="ring" value="3" max="8" show-value="count"></vs-progress>
+    <vs-progress type="ring" label="Working"></vs-progress>
+    <vs-progress type="dots" label="Loading orders"></vs-progress>
+    <button type="button" id="d-step">+10%</button>
+  </div>
+</div>
+
+<code class="demo-code">&lt;vs-progress value="40" show-value /&gt;
+&lt;vs-progress type="ring" label="Working" /&gt;</code>

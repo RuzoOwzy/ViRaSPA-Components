@@ -1,0 +1,12 @@
+<h1>Get started</h1>
+<p>Each package installs on its own, with the framework's <code>install.js</code>, from your project's repository root. What a package needs (helpers, other components) comes with it.</p>
+<code class="demo-code">node node-tools/install.js add component vs-table@0.1.0
+node node-tools/install.js add helper forms@0.1.0</code>
+<h2>Using a component</h2>
+<p>Nothing else is needed: the framework loads a <code>vs-*</code> component the first time its tag appears on a page. Components without content can be written self-closing in your page and component templates:</p>
+<code class="demo-code">&lt;vs-input-number name="amount" decimals="2" /&gt;
+&lt;vs-card heading="Monthly report"&gt; … &lt;/vs-card&gt;     (a component with content keeps its closing tag)</code>
+<h2>Using a helper in your own code</h2>
+<p>Add its name to <code>helpers</code> in <code>app/config/startup.js</code>, then call its API, e.g. <code>Viraspa.forms.validate(form)</code>.</p>
+<h2>Versions</h2>
+<p class="demo-muted">Every package is version 0.1.0, in development alongside the framework's first version. Each manifest says which framework versions it supports, and the framework refuses an incompatible one with a clear console message.</p>

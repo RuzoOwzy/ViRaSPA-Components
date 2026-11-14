@@ -1,0 +1,12 @@
+<h1>vs-select-tree</h1>
+<p class="demo-muted">A select whose choices are a tree. By default only leaves can be chosen; <code>cascade</code> with <code>multiple</code> chooses whole branches.</p>
+<form class="demo-box demo-form" id="d-form">
+  <div class="demo-field"><label for="d-category">Category</label>
+    <vs-select-tree id="d-category" name="category" placeholder="Choose a category" filter></vs-select-tree></div>
+  <div class="demo-field"><label for="d-regions">Regions (several, whole branches)</label>
+    <vs-select-tree id="d-regions" name="regions" multiple cascade placeholder="Choose regions"></vs-select-tree></div>
+</form>
+<p class="demo-output" id="d-output" role="status">Choose something.</p>
+
+<code class="demo-code">category.items = [{ id: "food", label: "Food" }, { id: "rice", label: "Rice", parent: "food" }, …];
+regions.nodes = [{ id: "north", label: "North", children: [ … ] }];</code>

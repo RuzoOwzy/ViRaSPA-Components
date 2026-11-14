@@ -1,0 +1,9 @@
+<h1>vs-image-cropper</h1>
+<p class="demo-muted">Drag the box or its handles. With the keyboard, the arrows move it (Shift: 10 pixels), Alt+arrows resize it, and + − R zoom and rotate. You can also choose or drop your own image: nothing is uploaded.</p>
+<div class="demo-box">
+  <vs-image-cropper id="d-cropper" src="app/assets/sample-landscape.svg" aspect="1" output-width="200" output-type="image/png"></vs-image-cropper>
+  <p class="demo-row"><button type="button" id="d-crop">Crop</button> <img id="d-crop-result" alt="The cropped picture" width="100" hidden> <span class="demo-muted" id="d-output" role="status"></span></p>
+</div>
+
+<code class="demo-code">&lt;vs-image-cropper src="photo.jpg" aspect="1" output-width="200" output-type="image/png" /&gt;
+const blob = await cropper.toBlob();      // 200 × 200 PNG</code>

@@ -1,0 +1,14 @@
+<h1>vs-input-number</h1>
+<p class="demo-muted">Typing is filtered to what the field accepts, the number shows in the user's format (thousands separators, decimals), and the arrow keys or the spin buttons step it.</p>
+<form class="demo-box demo-form" id="d-form">
+  <div class="demo-field"><label for="d-amount">Amount</label>
+    <vs-input-number id="d-amount" name="amount" decimals="2" min="0" step="500" prefix="TZS" value="1250000" required></vs-input-number></div>
+  <div class="demo-field"><label for="d-qty">Quantity, with spin buttons</label>
+    <vs-input-number id="d-qty" name="qty" min="1" max="99" value="3" spin></vs-input-number></div>
+  <div class="demo-field"><label for="d-rate">Discount (%)</label>
+    <vs-input-number id="d-rate" name="rate" decimals="1" min="0" max="100" suffix="%" value="12.5"></vs-input-number></div>
+</form>
+<p class="demo-output" id="d-output" role="status">Change a value.</p>
+
+<code class="demo-code">&lt;vs-input-number name="amount" decimals="2" min="0" step="500" prefix="TZS" required /&gt;
+&lt;vs-input-number name="qty" min="1" max="99" spin /&gt;</code>

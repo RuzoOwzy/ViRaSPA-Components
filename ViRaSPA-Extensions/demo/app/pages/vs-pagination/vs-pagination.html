@@ -1,0 +1,9 @@
+<h1>vs-pagination</h1>
+<p class="demo-muted">First, previous, next and last, a page box and the page size. It is used inside vs-table, and works with any list of your own.</p>
+<div class="demo-box">
+  <vs-pagination id="d-pager" total="135" page-size="20" page-sizes="10,20,50"></vs-pagination>
+</div>
+<p class="demo-output" id="d-output" role="status">Page 1, 20 per page.</p>
+
+<code class="demo-code">&lt;vs-pagination total="135" page-size="20" page-sizes="10,20,50" /&gt;
+pager.addEventListener("vs-page-change", (e) =&gt; load(e.detail.page, e.detail.pageSize));</code>

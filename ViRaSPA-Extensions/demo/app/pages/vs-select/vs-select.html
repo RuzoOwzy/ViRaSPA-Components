@@ -1,0 +1,16 @@
+<h1>vs-select</h1>
+<p class="demo-muted">For a fixed list: a filter box for long lists, several choices, groups and type-ahead. The options are plain <code>&lt;option&gt;</code> and <code>&lt;optgroup&gt;</code> elements.</p>
+<form class="demo-box demo-form" id="d-form">
+  <div class="demo-field"><label for="d-region">Region</label>
+    <vs-select id="d-region" name="region" placeholder="Choose a region" clearable>
+      <option value="dar">Dar es Salaam</option><option value="aru">Arusha</option><option value="dod">Dodoma</option><option value="mwa">Mwanza</option>
+      <optgroup label="South"><option value="mbe">Mbeya</option><option value="iri">Iringa</option><option value="mtw" disabled>Mtwara (closed)</option></optgroup>
+    </vs-select></div>
+  <div class="demo-field"><label for="d-tags">Tags (several)</label>
+    <vs-select id="d-tags" name="tags" multiple filter="off"><option value="vip">VIP</option><option value="new">New</option><option value="debt">Has debt</option></vs-select></div>
+</form>
+<p class="demo-output" id="d-output" role="status">Choose something.</p>
+
+<code class="demo-code">&lt;vs-select name="region" placeholder="Choose a region" clearable&gt;
+  &lt;option value="dar"&gt;Dar es Salaam&lt;/option&gt; …
+&lt;/vs-select&gt;</code>

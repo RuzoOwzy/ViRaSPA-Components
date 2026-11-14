@@ -1,4 +1,6 @@
-# Publishes the demo site (the ViRaSPA-Extensions/ folder) to GitHub Pages.
+# Publishes the demo site to GitHub Pages: the contents of
+# ViRaSPA-Extensions/demo/ at the top, with ViRaSPA-Extensions/components/
+# and helpers/ beside them (where the framework loads packages from).
 # Pages must be set to "GitHub Actions" as its source (Settings > Pages).
 name: Pages
 
@@ -24,9 +26,23 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v5
+      - name: Put the demo and the packages together
+        run: |
+          mkdir -p _site
+          cp -R ViRaSPA-Extensions/demo/. _site/
+          cp -R ViRaSPA-Extensions/components _site/components
+          cp -R ViRaSPA-Extensions/helpers _site/helpers
+          # Every package the demo's catalog names must be there.
+          missing=0
+          for name in $(grep -oE '"(vs-[a-z-]+|forms|data-entry|filter|tooltip|table-core)"' ViRaSPA-Extensions/demo/app/config/catalog.js | tr -d '"' | sort -u); do
+            if [ ! -d "_site/components/$name" ] && [ ! -d "_site/helpers/$name" ]; then
+              echo "Missing package: $name"; missing=1
+            fi
+          done
+          exit $missing
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: ViRaSPA-Extensions
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4

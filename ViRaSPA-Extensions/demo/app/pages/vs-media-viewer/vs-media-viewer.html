@@ -1,0 +1,10 @@
+<h1>vs-media-viewer</h1>
+<p class="demo-muted">Click a picture. Zoom with the wheel, a pinch or + and −, pan by dragging or with the arrows when zoomed, rotate with R, fit with 0. Move between items with Left/Right or a swipe, and close with Escape. It shows images, SVG, PDF, video and documents, all in our own code.</p>
+<vs-media-viewer gallery download class="demo-box demo-row">
+  <img src="app/assets/sample-landscape.svg" alt="A landscape" width="150" data-caption="An SVG picture: zoom in, the lines stay sharp.">
+  <img src="app/assets/sample-receipt.svg" alt="Receipt 1042" width="80" data-caption="Receipt 1042 · 8 Nov 2026">
+  <img src="app/assets/favicon.svg" alt="The ViRaSPA logo" width="80">
+  <a href="components/vs-media-viewer/README.md">A document (opens as a link)</a>
+</vs-media-viewer>
+
+<code class="demo-code">viewer.open([{ src: "receipt.jpg", title: "Receipt 1042" }, { src: "invoice.pdf" }], 0);</code>

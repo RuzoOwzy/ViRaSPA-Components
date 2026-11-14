@@ -1,0 +1,27 @@
+<h1>vs-textarea</h1>
+<p class="demo-muted">It grows as you type, always keeping an empty line ready below the text, up to <code>max-rows</code>; then it scrolls.</p>
+<form class="demo-box demo-form" id="d-form">
+  <div class="demo-field demo-wide"><label for="d-note">Note</label>
+    <vs-textarea id="d-note" name="note" rows="2" max-rows="6" maxlength="200" show-count placeholder="It grows as you type…"></vs-textarea></div>
+</form>
+
+<h2>Overlap: grows over what is below</h2>
+<p class="demo-muted">With <code>overlap</code> it rests at <code>rest-rows</code> (here one line). While you type it opens over the content below instead of pushing it down, and it goes back to one line when you leave it, however long the text.</p>
+<div class="demo-box demo-form">
+  <div class="demo-field"><label for="d-comment">Comment</label>
+    <vs-textarea id="d-comment" name="comment" overlap rest-rows="1" max-rows="8" placeholder="Click and type several lines…"></vs-textarea></div>
+  <div class="demo-field"><label for="d-after">The field below it</label><input id="d-after" value="It never moves"></div>
+</div>
+
+<h2>In a table row</h2>
+<p class="demo-muted">The comments stay one line high in their rows. The one you are typing in opens over the rows below it, even inside the table's scrolling area.</p>
+<vs-table-entry id="d-journal" name="journal" label="Journal lines">
+  <column field="account" label="Account" width="160"></column>
+  <column field="debit" label="Debit" editor="number" width="120"></column>
+  <column field="credit" label="Credit" editor="number" width="120"></column>
+  <column field="comment" label="Comment" editor="textarea"></column>
+</vs-table-entry>
+
+<code class="demo-code">&lt;vs-textarea name="note" rows="2" max-rows="6" maxlength="200" show-count /&gt;
+&lt;vs-textarea name="comment" overlap rest-rows="1" max-rows="8" /&gt;
+&lt;column field="comment" label="Comment" editor="textarea"&gt;&lt;/column&gt;     (vs-table-entry)</code>

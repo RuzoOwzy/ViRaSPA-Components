@@ -1,0 +1,18 @@
+<h1>vs-table</h1>
+<p class="demo-muted">Sort (Shift+click adds a column), search ("elodie aru" finds Élodie's orders in Arusha), filter by column, select across pages, export to CSV and choose the columns. On phones each row shows as a card. Double-click a row or press Enter on it to open it.</p>
+<vs-table id="d-orders" key-field="number" page-size="10" search selectable="multiple" export column-chooser phone-layout="cards" label="Orders">
+  <column field="number" label="Order" width="100"></column>
+  <column field="customer" label="Customer"></column>
+  <column field="city" label="City" filterable></column>
+  <column field="date" label="Date" format="date:'short'" width="120" phone="hide"></column>
+  <column field="status" label="Status" filterable width="120"></column>
+  <column field="amount" label="Amount" format="currency:'TZS'" total="sum" width="150"></column>
+  <button slot="toolbar" type="button" id="d-delete" disabled>Delete selected</button>
+</vs-table>
+<p class="demo-output" id="d-output" role="status">120 orders, made up in the browser.</p>
+
+<code class="demo-code">table.rows = orders;                       // or a server source:
+table.source = async ({ page, pageSize, search, sort, filters, signal }) =&gt; {
+  const r = await api.orders({ page, pageSize, search, sort, filters }, { signal });
+  return { rows: r.items, total: r.count };
+};</code>

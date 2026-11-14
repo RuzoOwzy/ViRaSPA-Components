@@ -1,4 +1,0 @@
-/* Tables demo page: overdue orders in red (row classes are also part names). */
-#d-orders::part(overdue) {
-  color: var(--vs-color-danger, #b3261e);
-}

@@ -1,0 +1,6 @@
+/* Overview page. */
+.demo-name {
+  width: 13rem;
+  font-family: ui-monospace, Consolas, monospace;
+  white-space: nowrap;
+}

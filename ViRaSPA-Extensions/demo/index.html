@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!-- 404.html is a copy of index.html: GitHub Pages answers addresses it has no
+     file for (deep links such as /vs-card) with it, and the app shows the page. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- The demo is served from https://<user>.github.io/<repository>/, a
+       sub-folder: <base> is set to it, so every relative path (and every app
+       route) works there, and at "/" when served locally. -->
+  <script>
+    (function () {
+      var parts = location.pathname.split("/");
+      var folder = location.hostname.slice(-10) === ".github.io" && parts[1] ? "/" + parts[1] + "/" : "/";
+      var base = document.createElement("base");
+      base.href = folder;
+      document.head.appendChild(base);
+    })();
+  </script>
+  <title>ViRaSPA Extensions</title>
+  <meta name="description" content="Live demos of the official ViRaSPA components and helpers.">
+  <link rel="icon" href="app/assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <!-- Start-up cover: the shell's colours at once (an ink header band on the
+       page background), and the app shown only once ViRaSPA has its styles,
+       the shell and the first page. The framework sets data-vs-ready; this
+       timer shows the page anyway if the framework can't load. -->
+  <style>
+    html { background: linear-gradient(#16203a 0 3.25rem, #f5f6fa 3.25rem) no-repeat, #f5f6fa; }
+    html:not([data-vs-ready]) #app { opacity: 0; }
+    #app { transition: opacity 0.12s ease-in; }
+    @media (prefers-reduced-motion: reduce) { #app { transition: none; } }
+  </style>
+  <script>setTimeout(function () { document.documentElement.setAttribute("data-vs-ready", ""); }, 5000);</script>
+</head>
+<body>
+  <noscript>This demo needs JavaScript.</noscript>
+  <div id="app">
+    <vs-header sticky>
+      <button type="button" slot="start" class="vs-menu-button" data-sidebar-toggle="packages" aria-label="Packages menu"></button>
+      <vs-brand slot="brand" name="ViRaSPA Extensions" logo="app/assets/favicon.svg"></vs-brand>
+      <vs-menu menu="top" label="Site" toggle-icon="more"></vs-menu>
+    </vs-header>
+    <div class="demo-body">
+      <!-- The packages, by group, with a search box. collapse="hide": the
+           burger hides it completely, so a page gets the full width. -->
+      <vs-sidebar id="packages" collapse="hide" collapsible storage-key="demo-packages">
+        <vs-menu orientation="vertical" menu="side" label="Packages" searchable search-placeholder="Search packages…" collapsible-groups></vs-menu>
+      </vs-sidebar>
+      <main id="page-root"></main>
+    </div>
+    <vs-footer>Official extensions for <a href="https://github.com/RuzoOwzy/ViRaSPA" rel="external">ViRaSPA</a>, the no-build SPA framework · in development</vs-footer>
+  </div>
+
+  <script>
+    window.Viraspa = {
+      settings: {
+        app: { name: "ViRaSPA Extensions demo", version: "0.1.0", releaseDate: "2026-11-08T12:00:00" },
+        cache: { strategy: "release" },
+      },
+    };
+  </script>
+  <!-- The framework from the jsDelivr CDN ("remote mode"), pinned to a commit
+       of the ViRaSPA repository. A local preview (localhost, served with
+       serve.js --mount /viraspa=…) uses the framework being developed beside
+       it instead; add ?framework=cdn to try the pinned copy locally. -->
+  <script>
+    (function () {
+      var local = /^(localhost|127\.0\.0\.1)$/.test(location.hostname) && !/[?&]framework=cdn/.test(location.search);
+      var script = document.createElement("script");
+      script.src = local ? "viraspa/viraspa.js" : "https://cdn.jsdelivr.net/gh/RuzoOwzy/ViRaSPA@544a119b9bf77d2bdce2558976c51bd94c3ac47e/ViRaSPA/viraspa/viraspa.js";
+      document.body.appendChild(script);
+    })();
+  </script>
+</body>
+</html>

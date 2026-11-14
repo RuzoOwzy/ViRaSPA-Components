@@ -1,0 +1,14 @@
+<h1>vs-login-form</h1>
+<p class="demo-muted">It doesn't talk to any server itself: it hands the credentials to your code. Try <strong>demo@example.com</strong> / <strong>demo</strong>, or anything else to see an error.</p>
+<div class="demo-box login-demo">
+  <vs-login-form remember-me forgot-password-href="vs-login-form" message-position="top">
+    <img slot="logo" src="app/assets/favicon.svg" alt="" width="48">
+  </vs-login-form>
+</div>
+<p id="d-output" class="demo-output" role="status"></p>
+
+<code class="demo-code">const form = document.querySelector("vs-login-form");
+form.loginHandler = async ({ username, password, rememberMe }) =&gt; {
+  // call your server; throw to show a message in the form
+};
+form.addEventListener("vs-login-success", () =&gt; Viraspa.core.navigate("/dashboard"));</code>
